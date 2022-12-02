@@ -1,7 +1,6 @@
 from os import path, getcwd
 
 def main():
-  """ Day 1 - Part 1 """
   __location__ = path.realpath(path.join(getcwd(), path.dirname(__file__)))
   input_file = "day1_input"
   elf = 1
