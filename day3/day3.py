@@ -4,10 +4,10 @@ def main():
   __location__ = path.realpath(path.join(getcwd(), path.dirname(__file__)))
   input_file = "day3_input"
   
+  priority_sum = 0
+  badge_priority_sum = 0
+  group = []
   with open(path.join(__location__, input_file), "r", encoding='utf8') as f:
-    priority_sum = 0
-    badge_priority_sum = 0
-    group = []
     for line in f:
       line = line.strip("\n")
       group.append(line)
@@ -22,8 +22,8 @@ def main():
       common_char = list(set(compartment_1).intersection(set(compartment_2)))[0]
       if common_char.islower(): priority_sum += ord(common_char) - 96
       else: priority_sum += ord(common_char) - 38
-    print(f"Priority sum of all duplicate items: {priority_sum}")
-    print(f"Priority sum of all group badges: {badge_priority_sum}")
+  print(f"Priority sum of all duplicate items: {priority_sum}")
+  print(f"Priority sum of all group badges: {badge_priority_sum}")
 
 if __name__=="__main__":
   main()
